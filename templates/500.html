@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Internal Server Error | Saeed Ismail{% endblock %}
+
+{% block content %}
+<main class="bg-light-gray">
+    <div class="container section-container text-center animate-fade">
+        <h1 class="display-1 fw-bold text-primary" style="font-size: 8rem; letter-spacing: -4px; font-family: 'Montserrat', sans-serif;">500</h1>
+        <h2 class="fw-bold mb-4" style="font-family: 'Montserrat', sans-serif;">Internal Server Error</h2>
+        <div class="accent-line mx-auto"></div>
+        <p class="lead text-muted mb-5">Oops! Something went wrong on our server. We are looking into the issue. Please check back later.</p>
+        <a href="{{ url_for('home') }}" class="btn-pill-blue">Return Home</a>
+    </div>
+</main>
+{% endblock %}

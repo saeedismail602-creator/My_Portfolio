@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Projects | Saeed Ismail{% endblock %}
+
+{% block content %}
+<main class="bg-light-gray">
+    <div class="container section-container animate-fade">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold">Projects</h1>
+                <div class="accent-line mx-auto"></div>
+                <p class="lead text-muted">A collection of my recent work in software engineering.</p>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Project 1 -->
+            <div class="col">
+                <div class="project-card h-100 d-flex flex-column animate-fade" style="animation-delay: 0.1s;">
+                    <h3 class="fw-bold">Movie Collection App</h3>
+                    <p class="text-primary fw-bold">Python / Flask / TMDB API</p>
+                    <p>A full-stack Flask web application to search, manage, and rate movies using the TMDB API, featuring custom database interactions.</p>
+                    <div class="mt-auto">
+                        <a href="https://github.com/saeedismail602-creator/movie-collection-app" class="btn-pill-outline btn-sm" target="_blank">View Repository</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="col">
+                <div class="project-card h-100 d-flex flex-column animate-fade" style="animation-delay: 0.2s;">
+                    <h3 class="fw-bold">Neon Nexus Tic-Tac-Toe</h3>
+                    <p class="text-primary fw-bold">Python / Game Engine / HTML</p>
+                    <p>A high-performance Python game engine and deterministic state machine featuring an isolated logic matrix, strict boundary validation, and game loop mechanics.</p>
+                    <div class="mt-auto">
+                        <a href="https://github.com/saeedismail602-creator/neon-nexus-tic-tac-toe-project-" class="btn-pill-outline btn-sm" target="_blank">View Repository</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="col">
+                <div class="project-card h-100 d-flex flex-column animate-fade" style="animation-delay: 0.3s;">
+                    <h3 class="fw-bold">Flask Posts App</h3>
+                    <p class="text-primary fw-bold">Python / Flask / CSS</p>
+                    <p>A clean and functional multi-user web application built with Flask for creating, displaying, and managing blog-style posts and articles.</p>
+                    <div class="mt-auto">
+                        <a href="https://github.com/saeedismail602-creator/flask-posts-app" class="btn-pill-outline btn-sm" target="_blank">View Repository</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

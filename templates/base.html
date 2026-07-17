@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    {% block styles %}
+    {{ bootstrap.load_css() }}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    {% endblock %}
+
+    <title>{% block title %}Saeed Ismail | Software Engineer{% endblock %}</title>
+  </head>
+  <body>
+    <div class="container-fluid px-5 mt-4">
+        <header class="d-flex flex-wrap align-items-center justify-content-between pb-3 mb-5 border-bottom animate-fade">
+            <a href="{{ url_for('home') }}" class="minimal-brand">
+                <span class="blue-square"></span>
+                <span class="brand-name">Saeed Ismail</span>
+                <span class="brand-title">/ Software Engineer</span>
+            </a>
+            <ul class="nav minimal-nav">
+                <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">About Me</a></li>
+                <li class="nav-item"><a href="{{ url_for('resume') }}" class="nav-link {% if request.endpoint == 'resume' %}active{% endif %}">Resume</a></li>
+                <li class="nav-item"><a href="{{ url_for('projects') }}" class="nav-link {% if request.endpoint == 'projects' %}active{% endif %}">Projects</a></li>
+                <li class="nav-item"><a href="{{ url_for('certificates') }}" class="nav-link {% if request.endpoint == 'certificates' %}active{% endif %}">Certificates</a></li>
+                <li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}">Contact</a></li>
+            </ul>
+        </header>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <footer class="animate-fade">
+        <div class="container">
+            <p>&copy; 2024 by Saeed Ismail. Built with Flask & ❤️</p>
+            <div class="d-flex justify-content-center gap-3 mt-2">
+                <a href="https://www.linkedin.com/in/saeed-ismail-a12693233/" class="social-icon" style="font-size: 1.2rem;" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/saeedismail602-creator" class="social-icon" style="font-size: 1.2rem;" target="_blank"><i class='bx bxl-github'></i></a>
+            </div>
+        </div>
+    </footer>
+
+    {% block scripts %}
+    {{ bootstrap.load_js() }}
+    {% endblock %}
+  </body>
+</html>

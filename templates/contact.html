@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | Saeed Ismail{% endblock %}
+
+{% block content %}
+<main class="bg-light-gray">
+    <div class="container section-container animate-fade">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold">Contact</h1>
+                <div class="accent-line mx-auto"></div>
+                <p class="lead text-muted">Let's connect and build something great together.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 mb-5">
+                <div class="contact-card h-100">
+                    <h2 class="fw-bold mb-4">Get in Touch</h2>
+                    <form action="{{ url_for('contact') }}" method="POST">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    <div class="alert alert-{{ category }} rounded-0 mb-4" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Name</label>
+                            <input type="text" name="name" class="form-control rounded-0" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Email</label>
+                            <input type="email" name="email" class="form-control rounded-0" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Subject</label>
+                            <input type="text" name="subject" class="form-control rounded-0" placeholder="Subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Message</label>
+                            <textarea name="message" class="form-control rounded-0" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-pill-blue border-0 w-100">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-5 offset-lg-1">
+                <div class="contact-card">
+                    <h2 class="fw-bold mb-4">Information</h2>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-primary text-white p-3 rounded-circle me-3" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                            <i class='bx bx-envelope fs-4'></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 fw-bold">Email</p>
+                            <p class="mb-0 text-muted">saeedismail602@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-primary text-white p-3 rounded-circle me-3" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                            <i class='bx bx-map fs-4'></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 fw-bold">Location</p>
+                            <p class="mb-0 text-muted">Türkiye</p>
+                        </div>
+                    </div>
+
+                    <div class="accent-line m-0 mb-4"></div>
+
+                    <h4 class="fw-bold mb-3">Social Media</h4>
+                    <div class="d-flex gap-3">
+                        <a href="https://www.linkedin.com/in/saeed-ismail-a12693233/" class="social-icon" target="_blank"><i class='bx bxl-linkedin-square fs-2'></i></a>
+                        <a href="https://github.com/saeedismail602-creator" class="social-icon" target="_blank"><i class='bx bxl-github fs-2'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Certificates | Saeed Ismail{% endblock %}
+
+{% block content %}
+<main class="bg-light-gray">
+    <div class="container section-container animate-fade">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold">Certificates & Certifications</h1>
+                <div class="accent-line mx-auto"></div>
+                <p class="lead text-muted">A showcase of my credentials, specialized training, and academic accomplishments.</p>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <!-- Certificate 1 -->
+            <div class="col">
+                <div class="project-card h-100 d-flex flex-column animate-fade" style="animation-delay: 0.1s; position: relative; overflow: hidden;">
+                    <!-- Decorative Badge icon -->
+                    <div style="position: absolute; top: 20px; right: 20px; font-size: 2.5rem; color: rgba(0, 80, 255, 0.1);">
+                        <i class='bx bx-award'></i>
+                    </div>
+                    
+                    <h3 class="fw-bold pe-5">100 Days of Code: The Complete Python Pro Bootcamp</h3>
+                    <p class="text-primary fw-bold mb-2">Udemy | Issued by Dr. Angela Yu</p>
+                    <p class="text-muted small mb-3"><i class='bx bx-calendar me-1'></i> Completed 2024</p>
+                    
+                    <p>An intensive program covering Python programming from beginner to advanced concepts. Mastered Object-Oriented Programming (OOP), web scraping (BeautifulSoup, Selenium), data analysis (Pandas, NumPy), SQL databases, Flask web development, and RESTful APIs.</p>
+                    
+                    <div class="skill-container my-3" style="gap: 5px; margin: 10px 0;">
+                        <span class="skill-pill btn-sm" style="padding: 3px 10px; font-size: 0.7rem;">Python</span>
+                        <span class="skill-pill btn-sm" style="padding: 3px 10px; font-size: 0.7rem;">Flask</span>
+                        <span class="skill-pill btn-sm" style="padding: 3px 10px; font-size: 0.7rem;">APIs</span>
+                        <span class="skill-pill btn-sm" style="padding: 3px 10px; font-size: 0.7rem;">Data Analysis</span>
+                        <span class="skill-pill btn-sm" style="padding: 3px 10px; font-size: 0.7rem;">Web Scraping</span>
+                    </div>
+
+                    <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                        <span class="text-muted small">ID: UC-udemy-bootcamp</span>
+                        <a href="{{ url_for('static', filename='Udamy_certificate1.pdf') }}" class="btn-pill-outline btn-sm" style="padding: 6px 20px; font-size: 0.8rem;" target="_blank">Verify Credentials</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="col">
+                <div class="project-card h-100 d-flex flex-column animate-fade" style="animation-delay: 0.2s; position: relative; overflow: hidden;">
+                    <!-- Decorative Badge icon -->
+                    <div style="position: absolute; top: 20px; right: 20px; font-size: 2.5rem; color: rgba(0, 80, 255, 0.1);">
+                        <i class='bx bx-book-bookmark'></i>
+                    </div>
+                    
+                    <h3 class="fw-bold pe-5">Software Engineering Academic Progress</h3>
+                    <p class="text-primary fw-bold mb-2">Istanbul Nişantaşı Üniversitesi</p>
+                    <p class="text-muted small mb-3"><i class='bx bx-calendar me-1'></i> 2024 - 2028 (In Progress)</p>
+                    
+                    <p>Demonstrated strong academic foundation in software architecture, database management systems, data structures and algorithms, and web application design during the first two years of the BSc program.</p>
+                    
+                    <div class="skill-container my-3" style="gap: 5px; margin: 10px 0;">
+                        <span class="skill-pill btn-sm" style="padding: 3px 10px; font-size: 0.7rem;">Algorithms</span>
+                        <span class="skill-pill btn-sm" style="padding: 3px 10px; font-size: 0.7rem;">Databases</span>
+                        <span class="skill-pill btn-sm" style="padding: 3px 10px; font-size: 0.7rem;">Software Design</span>
+                        <span class="skill-pill btn-sm" style="padding: 3px 10px; font-size: 0.7rem;">Data Structures</span>
+                    </div>
+
+                    <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                        <span class="text-muted small">Status: Active Student</span>
+                        <a href="{{ url_for('resume') }}" class="btn-pill-outline btn-sm" style="padding: 6px 20px; font-size: 0.8rem;">View Curriculum</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

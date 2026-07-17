@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %}Resume | Saeed Ismail{% endblock %}
+
+{% block content %}
+<main class="bg-light-gray">
+    <div class="container section-container animate-fade">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold">Resume</h1>
+                <div class="accent-line mx-auto"></div>
+                <p class="lead text-muted">A comprehensive overview of my professional background, skills, and academic timeline.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                
+                <!-- Contact & Header Info Card -->
+                <div class="resume-section mb-5 text-center text-md-start">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h2 class="fw-bold mb-1 text-primary">Saeed Ismail Mohamud</h2>
+                            <p class="text-uppercase fw-bold text-muted small mb-3" style="letter-spacing: 2px;">Software Engineer</p>
+                            <p class="mb-2"><i class='bx bx-map me-2 text-primary'></i> Istanbul, Turkey</p>
+                            <p class="mb-0"><i class='bx bx-phone me-2 text-primary'></i> +90 506 973 7419</p>
+                        </div>
+                        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                            <div class="d-flex flex-column gap-2 justify-content-md-end align-items-md-end">
+                                <a href="mailto:saeedismail602@gmail.com" class="text-decoration-none text-dark"><i class='bx bx-envelope me-2 text-primary'></i> saeedismail602@gmail.com</a>
+                                <a href="https://github.com/saeedismail602-creator" class="text-decoration-none text-dark" target="_blank"><i class='bx bxl-github me-2 text-primary'></i> GitHub Profile</a>
+                                <a href="https://www.linkedin.com/in/saeed-ismail-a12693233/" class="text-decoration-none text-dark" target="_blank"><i class='bx bxl-linkedin me-2 text-primary'></i> LinkedIn Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Summary -->
+                <div class="resume-section mb-5">
+                    <h3 class="fw-bold mb-3"><i class='bx bx-user me-2 text-primary'></i> Professional Summary</h3>
+                    <p class="lead" style="font-size: 1.05rem; line-height: 1.8;">
+                        Detail-oriented and driven Software Engineering student at Istanbul Nişantaşı University with a strong academic foundation in software design, data structures, and algorithms. Experienced in building full-stack web applications, backend APIs, and automation scripts using Python and Flask. Passionate about leveraging Object-Oriented Programming (OOP) and modern software engineering practices to solve complex problems and build scalable digital solutions.
+                    </p>
+                </div>
+
+                <!-- Experience -->
+                <div class="resume-section mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+                        <h3 class="fw-bold m-0"><i class='bx bx-briefcase me-2 text-primary'></i> Experience</h3>
+                        <a href="{{ url_for('static', filename='Saeed_Ismail_CV.docx') }}" class="btn-pill-blue btn-sm" style="padding: 6px 20px; font-size: 0.8rem;" download>Download CV</a>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center mb-2">
+                            <h4 class="fw-bold text-dark mb-0">Software Engineer</h4>
+                            <span class="text-muted fw-bold">2024 - Present</span>
+                        </div>
+                        <p class="fw-bold text-primary mb-3">Freelance / Project-Based</p>
+                        <p>Developing robust Python and Flask applications, building full-stack systems with database integrations (SQLAlchemy), designing scalable REST API services, and crafting responsive web frontends with a focus on clean UI/UX.</p>
+                        <ul class="ps-3">
+                            <li class="mb-2">Engineered custom database models and schemas using SQLAlchemy to facilitate CRUD capabilities in web projects.</li>
+                            <li class="mb-2">Designed and documented RESTful API endpoints for seamless data integration between backend services and frontend components.</li>
+                            <li class="mb-2">Automated data extraction and user workflow tasks using Selenium and BeautifulSoup, optimizing operation times.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="resume-section mb-5">
+                    <h3 class="fw-bold mb-4 border-bottom pb-2"><i class='bx bx-book-open me-2 text-primary'></i> Education</h3>
+                    <div class="mb-4">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center mb-2">
+                            <h4 class="fw-bold text-dark mb-0">BSc in Software Engineering</h4>
+                            <span class="text-muted fw-bold">2024 - 2028</span>
+                        </div>
+                        <p class="fw-bold text-primary mb-3">Istanbul Nişantaşı Üniversitesi</p>
+                        <p>Currently in my second year, focusing on software architecture, database design, data structures, and modern web technologies to build clean, scalable, and responsive digital products.</p>
+                        <p class="small text-muted mb-0"><i class='bx bx-bookmark-check me-1 text-primary'></i> Key coursework: Software Architecture, Database Management Systems, Data Structures & Algorithms, Object-Oriented Programming.</p>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="resume-section mb-5">
+                    <h3 class="fw-bold mb-4 border-bottom pb-2"><i class='bx bx-code-alt me-2 text-primary'></i> Technical Skills</h3>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-primary mb-3">Programming Languages</h5>
+                            <div class="skill-container mt-0 mb-2" style="gap: 8px;">
+                                <span class="skill-pill">Python</span>
+                                <span class="skill-pill">SQL</span>
+                                <span class="skill-pill">HTML5</span>
+                                <span class="skill-pill">CSS3</span>
+                                <span class="skill-pill">JavaScript (ES6)</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-primary mb-3">Frameworks & Libraries</h5>
+                            <div class="skill-container mt-0 mb-2" style="gap: 8px;">
+                                <span class="skill-pill">Flask</span>
+                                <span class="skill-pill">Pandas</span>
+                                <span class="skill-pill">NumPy</span>
+                                <span class="skill-pill">Bootstrap</span>
+                                <span class="skill-pill">Jinja2</span>
+                                <span class="skill-pill">Tkinter</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-primary mb-3">Databases & Storage</h5>
+                            <div class="skill-container mt-0 mb-2" style="gap: 8px;">
+                                <span class="skill-pill">SQLite</span>
+                                <span class="skill-pill">PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-primary mb-3">Tools & Concepts</h5>
+                            <div class="skill-container mt-0 mb-2" style="gap: 8px;">
+                                <span class="skill-pill">Git</span>
+                                <span class="skill-pill">GitHub</span>
+                                <span class="skill-pill">VS Code</span>
+                                <span class="skill-pill">PyCharm</span>
+                                <span class="skill-pill">REST APIs</span>
+                                <span class="skill-pill">Automation</span>
+                                <span class="skill-pill">OOP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="resume-section">
+                    <h3 class="fw-bold mb-4 border-bottom pb-2"><i class='bx bx-globe me-2 text-primary'></i> Languages</h3>
+                    <div class="row row-cols-2 row-cols-md-4 g-3 text-center">
+                        <div class="col">
+                            <div class="p-3 border rounded shadow-sm">
+                                <h5 class="fw-bold mb-1">Somali</h5>
+                                <span class="badge bg-primary" style="font-size: 0.75rem; letter-spacing: 0.5px;">Native / Bilingual</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border rounded shadow-sm">
+                                <h5 class="fw-bold mb-1">Arabic</h5>
+                                <span class="badge bg-primary" style="font-size: 0.75rem; letter-spacing: 0.5px;">Native / Bilingual</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border rounded shadow-sm">
+                                <h5 class="fw-bold mb-1">English</h5>
+                                <span class="badge bg-success" style="font-size: 0.75rem; letter-spacing: 0.5px;">Fluent</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border rounded shadow-sm">
+                                <h5 class="fw-bold mb-1">Turkish</h5>
+                                <span class="badge bg-secondary" style="font-size: 0.75rem; letter-spacing: 0.5px;">Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

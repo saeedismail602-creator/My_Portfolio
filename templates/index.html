@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <section class="split-hero">
+        <!-- Subtle Watermark -->
+        <div class="watermark">&lt;/&gt;</div>
+
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-4 col-md-5 ms-lg-5">
+                    <div class="profile-card animate-fade">
+                        <div class="card-top">
+                            <!-- Status Badge -->
+                            <div class="status-badge">
+                                <span class="status-dot"></span>
+                                AVAILABLE FOR PROJECTS
+                            </div>
+
+                            <div class="profile-img-wrapper">
+                                <img src="{{ url_for('static', filename='my_photo123.jpeg') }}" alt="Saeed Ismail">
+                            </div>
+                            <h2 class="mb-0">Saeed</h2>
+                            <h2 class="mb-0">Ismail</h2>
+                            <div class="accent-line"></div>
+                            <p class="text-muted small text-uppercase fw-bold" style="letter-spacing: 2px;">Software Engineer</p>
+                        </div>
+
+                        <div class="card-bottom">
+                            <a href="https://www.linkedin.com/in/saeed-ismail-a12693233/" class="social-icon" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                            <a href="https://github.com/saeedismail602-creator" class="social-icon" target="_blank"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-7 offset-lg-1 animate-fade" style="animation-delay: 0.2s;">
+                    <h1 class="hero-hello">Hello</h1>
+                    <p class="hero-subtitle">Engineering Impactful Digital Experiences</p>
+
+                    <p class="lead mb-4">I'm a software engineer based around the world. I specialize in building robust Python and Flask applications, developing full-stack database solutions, and designing scalable APIs and responsive user interfaces.</p>
+
+                    <!-- Skill Pills -->
+                    <div class="skill-container">
+                        <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" class="skill-pill" target="_blank">Python</a>
+                        <a href="https://en.wikipedia.org/wiki/Flask_(web_framework)" class="skill-pill" target="_blank">Flask</a>
+                        <a href="https://en.wikipedia.org/wiki/SQLAlchemy" class="skill-pill" target="_blank">SQLAlchemy</a>
+                        <a href="https://en.wikipedia.org/wiki/User_interface_design" class="skill-pill" target="_blank">UI/UX Design</a>
+                        <a href="https://en.wikipedia.org/wiki/API" class="skill-pill" target="_blank">API Development</a>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <a href="{{ url_for('resume') }}" class="btn-pill-blue">RESUME</a>
+                        <a href="{{ url_for('projects') }}" class="btn-pill-outline">PROJECTS</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

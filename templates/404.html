@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found | Saeed Ismail{% endblock %}
+
+{% block content %}
+<main class="bg-light-gray">
+    <div class="container section-container text-center animate-fade">
+        <h1 class="display-1 fw-bold text-primary" style="font-size: 8rem; letter-spacing: -4px; font-family: 'Montserrat', sans-serif;">404</h1>
+        <h2 class="fw-bold mb-4" style="font-family: 'Montserrat', sans-serif;">Page Not Found</h2>
+        <div class="accent-line mx-auto"></div>
+        <p class="lead text-muted mb-5">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+        <a href="{{ url_for('home') }}" class="btn-pill-blue">Return Home</a>
+    </div>
+</main>
+{% endblock %}

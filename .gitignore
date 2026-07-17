@@ -1,0 +1,44 @@
+# Environments & Virtual Envs
+.env
+.venv/
+env/
+venv/
+ENV/
+bin/
+include/
+lib/
+share/
+
+# Python cache & compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+*.pyo
+*.pyc
+
+# Databases & local data
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# IDEs & Editor configurations
+.idea/
+.vscode/
+*.swp
+*.swo
+.project
+.pydevproject
+.settings/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and packaging
+*.log
+build/
+dist/
+*.egg-info/
