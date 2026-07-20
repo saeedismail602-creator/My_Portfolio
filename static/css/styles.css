@@ -302,3 +302,95 @@ footer {
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
     border: 1px solid rgba(0,0,0,0.05);
 }
+
+/* Responsive Media Queries for Mobile & Tablet */
+@media (max-width: 991px) {
+    .hero-hello {
+        font-size: 5rem;
+        letter-spacing: -2px;
+    }
+}
+
+@media (max-width: 767px) {
+    .minimal-nav .nav-link {
+        margin-left: 8px;
+        margin-right: 8px;
+        font-size: 0.75rem;
+        padding: 4px 6px;
+    }
+    
+    .split-hero {
+        min-height: auto;
+        padding: 20px 0 50px 0;
+    }
+    
+    .hero-hello {
+        font-size: 3.5rem;
+        letter-spacing: -1px;
+        margin-top: 25px;
+        text-align: center;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    
+    .lead {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .skill-container {
+        justify-content: center;
+        margin: 20px 0 30px 0;
+    }
+
+    .section-container {
+        padding: 40px 0;
+        min-height: auto;
+    }
+
+    .resume-section, .project-card, .contact-card {
+        padding: 24px 18px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+    }
+
+    .card-top {
+        padding: 45px 20px 25px !important;
+    }
+
+    .profile-img-wrapper {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 20px;
+    }
+
+    .btn-pill-blue, .btn-pill-outline {
+        padding: 10px 24px;
+        font-size: 0.85rem;
+    }
+
+    .d-flex.gap-3 {
+        gap: 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-hello {
+        font-size: 2.8rem;
+    }
+    .brand-name {
+        font-size: 1.25rem;
+    }
+    .btn-pill-blue, .btn-pill-outline {
+        width: 100%;
+        text-align: center;
+    }
+    .hero-action-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+}

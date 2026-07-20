@@ -20,14 +20,14 @@
     <title>{% block title %}Saeed Ismail | Software Engineer{% endblock %}</title>
   </head>
   <body>
-    <div class="container-fluid px-5 mt-4">
-        <header class="d-flex flex-wrap align-items-center justify-content-between pb-3 mb-5 border-bottom animate-fade">
+    <div class="container-fluid px-3 px-md-5 mt-3 mt-md-4">
+        <header class="d-flex flex-column flex-md-row align-items-center justify-content-between pb-3 mb-4 mb-md-5 border-bottom animate-fade gap-3">
             <a href="{{ url_for('home') }}" class="minimal-brand">
                 <span class="blue-square"></span>
                 <span class="brand-name">Saeed Ismail</span>
-                <span class="brand-title">/ Software Engineer</span>
+                <span class="brand-title d-none d-sm-inline">/ Software Engineer</span>
             </a>
-            <ul class="nav minimal-nav">
+            <ul class="nav minimal-nav justify-content-center flex-wrap">
                 <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">About Me</a></li>
                 <li class="nav-item"><a href="{{ url_for('resume') }}" class="nav-link {% if request.endpoint == 'resume' %}active{% endif %}">Resume</a></li>
                 <li class="nav-item"><a href="{{ url_for('projects') }}" class="nav-link {% if request.endpoint == 'projects' %}active{% endif %}">Projects</a></li>
