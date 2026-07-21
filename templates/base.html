@@ -6,24 +6,41 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <meta name="theme-color" content="#0050ff" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ request.url }}" />
+
+    <!-- Favicon Branding -->
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}" />
 
     <!-- Primary Meta Tags -->
-    <meta name="title" content="Saeed Ismail | Software Engineer">
-    <meta name="description" content="Portfolio of Saeed Ismail, Software Engineer specializing in Python, Flask, REST APIs, and database systems.">
-    <meta name="keywords" content="Saeed Ismail, Software Engineer, Python, Flask, Backend Engineer, REST API, Full-Stack Developer, Portfolio">
-    <meta name="author" content="Saeed Ismail">
+    <meta name="title" content="{% block meta_title %}Saeed Ismail | Software Engineer{% endblock %}" />
+    {% block meta_description %}
+    <meta name="description" content="Portfolio of Saeed Ismail, Software Engineer specializing in Python, Flask, REST APIs, and full-stack database systems." />
+    {% endblock %}
+    {% block meta_keywords %}
+    <meta name="keywords" content="Saeed Ismail, Software Engineer, Python, Flask, Backend Engineer, REST API, Full-Stack Developer, Portfolio" />
+    {% endblock %}
+    <meta name="author" content="Saeed Ismail" />
 
     <!-- Open Graph / LinkedIn / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{% block og_title %}Saeed Ismail | Software Engineer{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Software Engineer specializing in Python, Flask, REST APIs, and database solutions. View my projects and resume.{% endblock %}">
-    <meta property="og:image" content="{{ url_for('static', filename='my_photo123.jpeg', _external=True) }}">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ request.url }}" />
+    <meta property="og:site_name" content="Saeed Ismail Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="{% block og_title %}Saeed Ismail | Software Engineer{% endblock %}" />
+    <meta property="og:description" content="{% block og_description %}Software Engineer specializing in Python, Flask, REST APIs, and database solutions. View my projects and resume.{% endblock %}" />
+    <meta property="og:image" content="{{ url_for('static', filename='my_photo123.jpeg', _external=True) }}" />
 
     <!-- Twitter Card -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="{% block twitter_title %}Saeed Ismail | Software Engineer{% endblock %}">
-    <meta property="twitter:description" content="{% block twitter_description %}Software Engineer specializing in Python, Flask, REST APIs, and database solutions.{% endblock %}">
-    <meta property="twitter:image" content="{{ url_for('static', filename='my_photo123.jpeg', _external=True) }}">
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ request.url }}" />
+    <meta property="twitter:title" content="{% block twitter_title %}Saeed Ismail | Software Engineer{% endblock %}" />
+    <meta property="twitter:description" content="{% block twitter_description %}Software Engineer specializing in Python, Flask, REST APIs, and database solutions.{% endblock %}" />
+    <meta property="twitter:image" content="{{ url_for('static', filename='my_photo123.jpeg', _external=True) }}" />
 
     <!-- Structured JSON-LD Schema -->
     <script type="application/ld+json">

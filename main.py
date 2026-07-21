@@ -2,7 +2,7 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from flask import Flask, render_template, request, flash, redirect, url_for, jsonify
+from flask import Flask, render_template, request, flash, redirect, url_for, jsonify, Response
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
@@ -145,6 +145,29 @@ def api_health():
         "database": "SQLAlchemy ORM Active",
         "email_smtp": "Active (SMTP Gateway Ready)"
     })
+
+@app.route("/robots.txt")
+def robots_txt():
+    content = "User-agent: *\nAllow: /\nSitemap: " + request.url_root.rstrip('/') + "/sitemap.xml"
+    return Response(content, mimetype="text/plain")
+
+@app.route("/sitemap.xml")
+def sitemap_xml():
+    pages = [
+        url_for('home', _external=True),
+        url_for('resume', _external=True),
+        url_for('projects', _external=True),
+        url_for('certificates', _external=True),
+        url_for('contact', _external=True)
+    ]
+    xml = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+    ]
+    for p in pages:
+        xml.append(f'  <url><loc>{p}</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>')
+    xml.append('</urlset>')
+    return Response('\n'.join(xml), mimetype="application/xml")
 
 @app.errorhandler(404)
 def page_not_found(e):
