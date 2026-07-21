@@ -7,6 +7,24 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Saeed Ismail | Software Engineer">
+    <meta name="description" content="Portfolio of Saeed Ismail, Software Engineer specializing in Python, Flask, REST APIs, and database systems.">
+    <meta name="keywords" content="Saeed Ismail, Software Engineer, Python, Flask, Backend Engineer, REST API, Full-Stack Developer, Portfolio">
+    <meta name="author" content="Saeed Ismail">
+
+    <!-- Open Graph / LinkedIn / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% block og_title %}Saeed Ismail | Software Engineer{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Software Engineer specializing in Python, Flask, REST APIs, and database solutions. View my projects and resume.{% endblock %}">
+    <meta property="og:image" content="{{ url_for('static', filename='my_photo123.jpeg', _external=True) }}">
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="{% block twitter_title %}Saeed Ismail | Software Engineer{% endblock %}">
+    <meta property="twitter:description" content="{% block twitter_description %}Software Engineer specializing in Python, Flask, REST APIs, and database solutions.{% endblock %}">
+    <meta property="twitter:image" content="{{ url_for('static', filename='my_photo123.jpeg', _external=True) }}">
+
     {% block styles %}
     {{ bootstrap.load_css() }}
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;800&display=swap" rel="stylesheet">
@@ -41,7 +59,7 @@
 
     <footer class="animate-fade">
         <div class="container">
-            <p>&copy; 2024 by Saeed Ismail. Built with Flask & ❤️</p>
+            <p>&copy; <span id="copyright-year">2026</span> by Saeed Ismail. Built with Flask & ❤️</p>
             <div class="d-flex justify-content-center gap-3 mt-2">
                 <a href="https://www.linkedin.com/in/saeed-ismail-a12693233/" class="social-icon" style="font-size: 1.2rem;" target="_blank"><i class='bx bxl-linkedin'></i></a>
                 <a href="https://github.com/saeedismail602-creator" class="social-icon" style="font-size: 1.2rem;" target="_blank"><i class='bx bxl-github'></i></a>
@@ -51,6 +69,14 @@
 
     {% block scripts %}
     {{ bootstrap.load_js() }}
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var yearSpan = document.getElementById("copyright-year");
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      });
+    </script>
     {% endblock %}
   </body>
 </html>
