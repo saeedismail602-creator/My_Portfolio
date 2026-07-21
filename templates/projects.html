@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 
 {% block title %}Projects | Saeed Ismail{% endblock %}
+{% block og_title %}Software Engineering Projects | Saeed Ismail{% endblock %}
+{% block og_description %}Explore full-stack Python, Flask, REST API, and game engine projects engineered by Saeed Ismail.{% endblock %}
 
 {% block content %}
 <main class="bg-light-gray">
     <div class="container section-container animate-fade">
         <div class="row mb-5">
             <div class="col-12 text-center">
-                <h1 class="display-4 fw-bold">Projects</h1>
+                <h1 class="display-4 fw-bold">Featured Projects</h1>
                 <div class="accent-line mx-auto"></div>
-                <p class="lead text-muted">A collection of my recent work in software engineering.</p>
+                <p class="lead text-muted">A curated collection of full-stack web apps, backend APIs, and software engine projects.</p>
             </div>
         </div>
 
@@ -17,11 +19,21 @@
             <!-- Project 1 -->
             <div class="col">
                 <div class="project-card h-100 d-flex flex-column animate-fade" style="animation-delay: 0.1s;">
-                    <h3 class="fw-bold">Movie Collection App</h3>
-                    <p class="text-primary fw-bold">Python / Flask / TMDB API</p>
-                    <p>A full-stack Flask web application to search, manage, and rate movies using the TMDB API, featuring custom database interactions.</p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-primary text-white px-3 py-2 rounded-pill" style="font-size: 0.75rem;">FULL-STACK</span>
+                        <i class='bx bx-film fs-3 text-primary'></i>
+                    </div>
+                    <h3 class="fw-bold mb-2">Movie Collection App</h3>
+                    <p class="text-primary fw-bold small mb-3"><i class='bx bxl-python'></i> Python &bull; Flask &bull; TMDB API &bull; SQLite</p>
+                    <p class="text-muted">A full-stack web application to search, rate, and curate top movies using the TMDB REST API, backed by SQLAlchemy database models.</p>
+                    <div class="mb-4">
+                        <span class="badge bg-light text-dark border me-1">Python</span>
+                        <span class="badge bg-light text-dark border me-1">Flask</span>
+                        <span class="badge bg-light text-dark border me-1">REST API</span>
+                        <span class="badge bg-light text-dark border">SQLAlchemy</span>
+                    </div>
                     <div class="mt-auto">
-                        <a href="https://github.com/saeedismail602-creator/movie-collection-app" class="btn-pill-outline btn-sm" target="_blank">View Repository</a>
+                        <a href="https://github.com/saeedismail602-creator/movie-collection-app" class="btn-pill-blue btn-sm w-100 text-center" target="_blank"><i class='bx bxl-github me-1'></i> View Repository</a>
                     </div>
                 </div>
             </div>
@@ -29,11 +41,20 @@
             <!-- Project 2 -->
             <div class="col">
                 <div class="project-card h-100 d-flex flex-column animate-fade" style="animation-delay: 0.2s;">
-                    <h3 class="fw-bold">Neon Nexus Tic-Tac-Toe</h3>
-                    <p class="text-primary fw-bold">Python / Game Engine / HTML</p>
-                    <p>A high-performance Python game engine and deterministic state machine featuring an isolated logic matrix, strict boundary validation, and game loop mechanics.</p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-dark text-white px-3 py-2 rounded-pill" style="font-size: 0.75rem;">GAME ENGINE</span>
+                        <i class='bx bx-joystick fs-3 text-primary'></i>
+                    </div>
+                    <h3 class="fw-bold mb-2">Neon Nexus Tic-Tac-Toe</h3>
+                    <p class="text-primary fw-bold small mb-3"><i class='bx bxl-python'></i> Python &bull; State Engine &bull; OOP</p>
+                    <p class="text-muted">A high-performance Python game engine and deterministic state machine featuring an isolated logic matrix, strict boundary validation, and game loops.</p>
+                    <div class="mb-4">
+                        <span class="badge bg-light text-dark border me-1">Python</span>
+                        <span class="badge bg-light text-dark border me-1">OOP</span>
+                        <span class="badge bg-light text-dark border">State Machine</span>
+                    </div>
                     <div class="mt-auto">
-                        <a href="https://github.com/saeedismail602-creator/neon-nexus-tic-tac-toe-project-" class="btn-pill-outline btn-sm" target="_blank">View Repository</a>
+                        <a href="https://github.com/saeedismail602-creator/neon-nexus-tic-tac-toe-project-" class="btn-pill-blue btn-sm w-100 text-center" target="_blank"><i class='bx bxl-github me-1'></i> View Repository</a>
                     </div>
                 </div>
             </div>
@@ -41,11 +62,20 @@
             <!-- Project 3 -->
             <div class="col">
                 <div class="project-card h-100 d-flex flex-column animate-fade" style="animation-delay: 0.3s;">
-                    <h3 class="fw-bold">Flask Posts App</h3>
-                    <p class="text-primary fw-bold">Python / Flask / CSS</p>
-                    <p>A clean and functional multi-user web application built with Flask for creating, displaying, and managing blog-style posts and articles.</p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-primary text-white px-3 py-2 rounded-pill" style="font-size: 0.75rem;">WEB APP</span>
+                        <i class='bx bx-news fs-3 text-primary'></i>
+                    </div>
+                    <h3 class="fw-bold mb-2">Flask Posts App</h3>
+                    <p class="text-primary fw-bold small mb-3"><i class='bx bxl-python'></i> Python &bull; Flask &bull; Jinja2 &bull; Bootstrap</p>
+                    <p class="text-muted">A multi-user web application built with Flask and Jinja2 templating for creating, rendering, and managing structured blog posts and articles.</p>
+                    <div class="mb-4">
+                        <span class="badge bg-light text-dark border me-1">Python</span>
+                        <span class="badge bg-light text-dark border me-1">Flask</span>
+                        <span class="badge bg-light text-dark border">Jinja2</span>
+                    </div>
                     <div class="mt-auto">
-                        <a href="https://github.com/saeedismail602-creator/flask-posts-app" class="btn-pill-outline btn-sm" target="_blank">View Repository</a>
+                        <a href="https://github.com/saeedismail602-creator/flask-posts-app" class="btn-pill-blue btn-sm w-100 text-center" target="_blank"><i class='bx bxl-github me-1'></i> View Repository</a>
                     </div>
                 </div>
             </div>

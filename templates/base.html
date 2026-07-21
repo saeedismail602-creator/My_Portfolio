@@ -25,6 +25,22 @@
     <meta property="twitter:description" content="{% block twitter_description %}Software Engineer specializing in Python, Flask, REST APIs, and database solutions.{% endblock %}">
     <meta property="twitter:image" content="{{ url_for('static', filename='my_photo123.jpeg', _external=True) }}">
 
+    <!-- Structured JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Saeed Ismail",
+      "jobTitle": "Software Engineer",
+      "url": "https://saeedismail.dev",
+      "sameAs": [
+        "https://www.linkedin.com/in/saeed-ismail-a12693233/",
+        "https://github.com/saeedismail602-creator"
+      ],
+      "knowsAbout": ["Python", "Flask", "SQLAlchemy", "REST APIs", "Database Design", "Full-Stack Web Development"]
+    }
+    </script>
+
     {% block styles %}
     {{ bootstrap.load_css() }}
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;800&display=swap" rel="stylesheet">

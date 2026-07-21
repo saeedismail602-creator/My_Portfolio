@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}Saeed Ismail | Software Engineer{% endblock %}
+{% block og_title %}Saeed Ismail | Software Engineer Portfolio{% endblock %}
+{% block og_description %}Software Engineer specializing in Python, Flask, REST APIs, database design, and modern UI/UX.{% endblock %}
+
 {% block content %}
 <main>
     <section class="split-hero">
@@ -19,17 +23,18 @@
                             </div>
 
                             <div class="profile-img-wrapper">
-                                <img src="{{ url_for('static', filename='my_photo123.jpeg') }}" alt="Saeed Ismail">
+                                <img src="{{ url_for('static', filename='my_photo123.jpeg') }}" alt="Saeed Ismail - Software Engineer">
                             </div>
-                            <h2 class="mb-0">Saeed</h2>
-                            <h2 class="mb-0">Ismail</h2>
+                            <h2 class="mb-0 fw-bold">Saeed</h2>
+                            <h2 class="mb-0 fw-bold">Ismail</h2>
                             <div class="accent-line"></div>
                             <p class="text-muted small text-uppercase fw-bold" style="letter-spacing: 2px;">Software Engineer</p>
                         </div>
 
                         <div class="card-bottom">
-                            <a href="https://www.linkedin.com/in/saeed-ismail-a12693233/" class="social-icon" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                            <a href="https://github.com/saeedismail602-creator" class="social-icon" target="_blank"><i class='bx bxl-github'></i></a>
+                            <a href="https://www.linkedin.com/in/saeed-ismail-a12693233/" class="social-icon" target="_blank" title="LinkedIn Profile"><i class='bx bxl-linkedin'></i></a>
+                            <a href="https://github.com/saeedismail602-creator" class="social-icon" target="_blank" title="GitHub Profile"><i class='bx bxl-github'></i></a>
+                            <a href="mailto:saeedismail602@gmail.com" class="social-icon" title="Email Saeed"><i class='bx bx-envelope'></i></a>
                         </div>
                     </div>
                 </div>
@@ -38,15 +43,31 @@
                     <h1 class="hero-hello">Hello</h1>
                     <p class="hero-subtitle">Engineering Impactful Digital Experiences</p>
 
-                    <p class="lead mb-4">I'm a Software Engineer based in Türkiye (available for Remote work globally). I specialize in building robust Python and Flask applications, developing full-stack database solutions, and designing scalable APIs and responsive user interfaces.</p>
+                    <p class="lead mb-3">I'm a Software Engineer based in Türkiye (available for Remote work globally). I specialize in building robust Python and Flask applications, developing full-stack database solutions, and designing scalable APIs and responsive user interfaces.</p>
+
+                    <!-- Interactive Code / Live Backend Status Terminal -->
+                    <div class="tech-terminal">
+                        <div class="terminal-header">
+                            <span class="terminal-dot dot-red"></span>
+                            <span class="terminal-dot dot-yellow"></span>
+                            <span class="terminal-dot dot-green"></span>
+                            <span class="ms-2 text-muted small">saeed_ismail.py &mdash; Live Flask Backend</span>
+                        </div>
+                        <code>
+                            <span class="term-cmd">class</span> <span class="term-out">SoftwareEngineer</span>:<br>
+                            &nbsp;&nbsp;stack = [<span class="term-val">"Python"</span>, <span class="term-val">"Flask"</span>, <span class="term-val">"SQLAlchemy"</span>, <span class="term-val">"REST APIs"</span>]<br>
+                            &nbsp;&nbsp;location = <span class="term-val">"Türkiye"</span> | remote = <span class="term-val">True</span><br>
+                            &nbsp;&nbsp;system_health = <span id="live-backend-status" class="term-out">"Checking Flask API..."</span>
+                        </code>
+                    </div>
 
                     <!-- Skill Pills -->
                     <div class="skill-container">
-                        <a href="{{ url_for('projects') }}" class="skill-pill" title="View projects built with Python">Python</a>
-                        <a href="{{ url_for('projects') }}" class="skill-pill" title="View projects built with Flask">Flask</a>
-                        <a href="{{ url_for('projects') }}" class="skill-pill" title="View projects built with SQLAlchemy">SQLAlchemy</a>
-                        <a href="{{ url_for('projects') }}" class="skill-pill" title="View UI/UX Design projects">UI/UX Design</a>
-                        <a href="{{ url_for('projects') }}" class="skill-pill" title="View API Development projects">API Development</a>
+                        <a href="{{ url_for('projects') }}" class="skill-pill" title="View projects built with Python"><i class='bx bxl-python'></i> Python</a>
+                        <a href="{{ url_for('projects') }}" class="skill-pill" title="View projects built with Flask"><i class='bx bx-server'></i> Flask</a>
+                        <a href="{{ url_for('projects') }}" class="skill-pill" title="View projects built with SQLAlchemy"><i class='bx bx-data'></i> SQLAlchemy</a>
+                        <a href="{{ url_for('projects') }}" class="skill-pill" title="View UI/UX Design projects"><i class='bx bx-palette'></i> UI/UX Design</a>
+                        <a href="{{ url_for('projects') }}" class="skill-pill" title="View API Development projects"><i class='bx bx-code-alt'></i> REST APIs</a>
                     </div>
 
                     <div class="d-flex gap-3 flex-wrap hero-action-buttons justify-content-center justify-content-lg-start">
@@ -59,4 +80,21 @@
         </div>
     </section>
 </main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch("{{ url_for('api_health') }}")
+      .then(res => res.json())
+      .then(data => {
+        const el = document.getElementById("live-backend-status");
+        if (el && data.status === "online") {
+          el.innerHTML = `"<span style='color: #10b981;'>🟢 Live (${data.service} - ${data.database})</span>"`;
+        }
+      })
+      .catch(err => {
+        const el = document.getElementById("live-backend-status");
+        if (el) el.textContent = '"Flask Active"';
+      });
+  });
+</script>
 {% endblock %}

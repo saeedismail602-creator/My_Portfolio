@@ -2,7 +2,7 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, jsonify
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
@@ -136,6 +136,15 @@ def contact():
         return redirect(url_for('contact'))
         
     return render_template("contact.html")
+
+@app.route("/api/health")
+def api_health():
+    return jsonify({
+        "status": "online",
+        "service": "Flask Portfolio Backend",
+        "database": "SQLAlchemy ORM Active",
+        "email_smtp": "Active (SMTP Gateway Ready)"
+    })
 
 @app.errorhandler(404)
 def page_not_found(e):
